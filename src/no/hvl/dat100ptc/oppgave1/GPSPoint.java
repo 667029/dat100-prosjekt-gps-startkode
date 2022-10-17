@@ -71,8 +71,8 @@ public class GPSPoint {
 		String str;
 
 		// TODO - start
-		return time + " (" + latitude + "," + longitude + ") " + elevation + "\n";
-
+		str = time + " (" + latitude + "," + longitude + ") " + elevation + "\n";
+		return str;
 		// TODO - slutt
 
 	}
