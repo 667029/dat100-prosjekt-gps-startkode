@@ -105,9 +105,11 @@ public class GPSUtils {
 		String timestr;
 		String TIMESEP = ":";
 
-		timestr = String.format("  %02d:%02d:%02d", secs / 3600, (secs / 60) % 60, secs % 60);
-
-		return timestr;
+		timestr = String.format("%02d:%02d:%02d", secs / 3600, (secs / 60) % 60, secs % 60);
+        while (timestr.length() < TEXTWIDTH) {
+            timestr = " " + timestr;
+        }
+        return timestr;
 
 	}
 
@@ -118,10 +120,13 @@ public class GPSUtils {
 		String str;
 		
 		double rundet = Math.round(d * 100.0) / 100.0;
-		
-		str = "      " + Double.toString(rundet);
-		
-		return str;
+
+        str = "" + Double.toString(rundet);
+        	while( str.length() < TEXTWIDTH) {
+        		str = " " + str;
+        	}
+        	
+        return str;
 
 	}
 }
